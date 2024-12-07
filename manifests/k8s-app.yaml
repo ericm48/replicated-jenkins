@@ -1,3 +1,13 @@
 #
 # k8s-app-yaml
 #
+apiVersion: app.k8s.io/v1beta1
+kind: Application
+metadata:
+  name: "jenkins"
+spec:
+  descriptor:
+    links:
+      - description: Open App
+        # needs to match applicationUrl in kots-app.yaml
+        url: "http://jenkins"

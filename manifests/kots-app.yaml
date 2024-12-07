@@ -1,3 +1,17 @@
 #
 # kots-app.yaml
 #
+apiVersion: kots.io/v1beta1
+kind: Application
+metadata:
+  name: jenkins
+spec:
+  title: jenkins
+  statusInformers:
+    - deployment/jenkins
+  ports:
+    - serviceName: "jenkins"
+      servicePort: 8080
+      localPort: 33000
+      applicationUrl: "http://jenkins"
+  icon: https://raw.githubusercontent.com/cncf/artwork/master/projects/kubernetes/icon/color/kubernetes-icon-color.png
